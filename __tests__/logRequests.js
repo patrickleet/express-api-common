@@ -35,7 +35,6 @@ describe('logRequests', () => {
     let fn = logRequests(logger)
 
     fn(req, res, next)
-    expect(logger).toBeCalledWith('%s: %s', req.method, req.path)
     expect(next).toBeCalled()
   })
 

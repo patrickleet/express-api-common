@@ -4,7 +4,11 @@ export default function (log = console.log) {
     const path = req.path
 
     if (path !== '/_health') {
-      log('%s: %s', method, path)
+      if (typeof log === 'function') {
+        log(`${method}: ${path}`)
+      } else if (typeof log === 'object' && typeof log.info === 'function') {
+        log.info(`${method}: ${path}`)
+      }
     }
 
     next()
