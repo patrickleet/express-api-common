@@ -1,6 +1,6 @@
 {
-  "name": "@brewgorithm/express-api-common",
-  "version": "0.0.1",
+  "name": "express-api-common",
+  "version": "0.0.0-development",
   "description": "an api to receive and ingest product exports",
   "scripts": {
     "commit": "git-cz",
@@ -10,7 +10,8 @@
     "test": "jest --config jest.json --coverage --verbose",
     "test:watch": "jest --config jest.json --watch --coverage --verbose",
     "precommit": "npm run lint:fix && npm run test",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "semantic-release": "semantic-release pre && npm run lint && npm run test && npm publish && semantic-release post"
   },
   "main": "dist/server.js",
   "files": [
@@ -18,7 +19,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Brewgorithm/express-api-common.git"
+    "url": "https://github.com/patrickleet/express-api-common.git"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
