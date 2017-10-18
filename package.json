@@ -11,7 +11,7 @@
     "test:watch": "jest --config jest.json --watch --coverage --verbose",
     "precommit": "npm run lint:fix && npm run test",
     "prepublish": "npm run build",
-    "semantic-release": "semantic-release pre && npm run lint && npm run test && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "main": "dist/server.js",
   "files": [
