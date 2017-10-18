@@ -10,7 +10,6 @@ export default function (log = console.log) {
         log.info(`${method}: ${path}`)
       }
     }
-
     next()
   }
 }
