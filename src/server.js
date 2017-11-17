@@ -22,8 +22,11 @@ const makeServer = (options) => {
 
   log('setting up error handler')
   server.use(getErrorHandler(process.env.NODE_ENV))
-  server.use(notFoundHandler || handleNotFound)
 
+  server.startServer = (port, onListen) => {
+    server.use(notFoundHandler || handleNotFound)
+    server.listen(port, onListen)
+  }
   return server
 }
 
