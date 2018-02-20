@@ -21,16 +21,13 @@ describe('server', () => {
     }
     let server = makeServer(options)
     expect(server.use).toBeCalled()
-  })
 
-  it('startServer', () => {
-    let options = {
-      logger: jest.fn()
-    }
-    let server = makeServer(options)
     expect(server.startServer).toBeDefined()
+    expect(server.start).toBeDefined()
+    expect(server.start).toEqual(server.startServer)
+
     let cb = jest.fn()
-    server.startServer(3000, cb)
+    server.start(3000, cb)
     expect(server.listen).toBeCalled()
   })
 })
