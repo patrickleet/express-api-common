@@ -1,7 +1,7 @@
 {
   "name": "express-api-common",
   "version": "0.0.0-development",
-  "description": "an api to receive and ingest product exports",
+  "description": "express api configured with logging, healthcheck, prometheus metrics, and other things I commonly use",
   "scripts": {
     "commit": "git-cz",
     "build": "babel src -d dist",
