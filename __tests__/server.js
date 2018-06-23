@@ -1,4 +1,4 @@
-import makeServer from 'server'
+import { makeServer } from 'server'
 
 jest.mock('expressServer', () => {
   return {
