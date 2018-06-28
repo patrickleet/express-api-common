@@ -58,7 +58,9 @@ describe('logRequests', () => {
     }
     let res = {}
     let next = jest.fn()
-    let logger = require('llog')
+    let logger = {
+      info: function () {}
+    }
     let fn = logRequests(logger)
 
     fn(req, res, next)
