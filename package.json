@@ -50,7 +50,7 @@
     "jest": "^22.4.0",
     "regenerator-runtime": "^0.12.0",
     "semantic-release": "^15.0.3",
-    "travis-deploy-once": "^4.4.1"
+    "travis-deploy-once": "^5.0.1"
   },
   "license": "ISC",
   "config": {
