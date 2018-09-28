@@ -12,7 +12,7 @@ const log = debug('express-api-common')
 export const makeServer = (options) => {
   log('creating express server')
   const { logger, notFoundHandler, bus } = options
-  const metricsMiddleware = promBundle({includeMethod: true})
+  const metricsMiddleware = promBundle({ includeMethod: true })
 
   // we do not want to include healthcheck in metrics
   // so use the metrics middleware below health
