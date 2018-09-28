@@ -27,7 +27,7 @@
     "debug": "^4.0.1",
     "express": "^4.16.2",
     "express-prom-bundle": "^4.0.0",
-    "express-servicebus": "^1.0.1"
+    "express-servicebus": "1.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
