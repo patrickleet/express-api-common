@@ -26,8 +26,9 @@
     "body-parser": "^1.18.2",
     "debug": "^4.0.1",
     "express": "^4.16.2",
-    "express-prom-bundle": "^5.0.0",
-    "express-servicebus": "^1.0.1"
+    "express-prom-bundle": "^5.1.0",
+    "express-servicebus": "^1.0.1",
+    "prom-client": "^11.2.1"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",

@@ -1,31 +1,25 @@
 language: node_js
-cache:
-  directories:
-  - "~/.npm"
+node_js:
+  - '8'
+  - '10'
+  - 'node'
+cache: npm
 notifications:
   email: false
-node_js:
-- 9
-- 8
-- 6
-- 10
 before_install:
-- "[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest"
-- npm install -g greenkeeper-lockfile@1
-install:
-- npm install
-- npm install -g codecov
-before_script: greenkeeper-lockfile-update
+  - npm install -g codecov
 script:
-- npm run lint
-- npm run test
-- codecov
-after_script: greenkeeper-lockfile-upload
-after_success:
-- npm run travis-deploy-once "npm run semantic-release"
+  - npm run lint
+  - npm run test
+  - codecov
 branches:
   except:
-  - "/^v\\d+\\.\\d+\\.\\d+$/"
-env:
-  global:
-    secure: TEtgSv02nz03bBJ5xB9NH5xZirDDwogfwcNqTuipJPJZjLL/cOSq2JMUp9myyAG8BlH6u9/Cbkms5zEySsUU2OH7q1rhrq2FKFlbUNxR0dk5AhWZ2b9GwtfP9zS5ZbzHkCa4RI5fwjgLdXnF+ucGf1ubQwjBlGbFOLimM1igV8Wm4waD7jNcfsxOAJqJpRYd+BviYusJ99MdDw65gLsfUoHvZZDR3qB5GFrlT4dQ9nx5o5KSZJ+lKbXYkHY6DKphil7Uox+50dmZnMi11MlCZEcggHWP/eyff4xLwI+do1cj7jpyEI+Q8uhXmkY8LFIXNdOhdCXFrucVM1v+RqdlHYZVW1UVDMdJpswh7VJXPEIniR75EfAsZFHnkLYJJPxcvLy4LglY/b3vqTKROFOv1aBTLfeEQj/bKEoSQnIhuwmr455Nn0g1TIKtesAoUOv6u8dX8O2pWRYyGmE7/CmsVnjnVx9Q/4m6HRpjuiGpcCvaoKy9ROBPl9oB4sSeXWxsBL3epBLPjrbXGu6wM0wGfI3z7s+mIGNRINRRsemcGMVYAwc+urtSux/oPjpXPV01hLTzBfxWXVSa565vizsBvNxSG0xnpbm9HVQYQy/zlEj3m9wt8/DNl+V8nNu3vNYTTKj0bhKyxpplB/6e/7Pc8rQo07JFSn9Jm2fgm5FE0wg=
+    - '/^v\d+\.\d+\.\d+$/'
+jobs:
+  include:
+    - stage: deploy
+      if: branch == master && !fork
+      node_js: '8.9.1' # pre-installed version
+      script:
+        - npm install -g semantic-release@^15
+        - semantic-release
