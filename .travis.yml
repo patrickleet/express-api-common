@@ -18,8 +18,8 @@ branches:
 jobs:
   include:
     - stage: deploy
-      if: branch == master && !fork
-      node_js: '8.9.1' # pre-installed version
+      if: branch == master
+      node_js: '10' # pre-installed version
       script:
         - npm install -g semantic-release@^15
         - semantic-release
