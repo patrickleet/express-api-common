@@ -4,7 +4,7 @@ import getErrorHandler from './getErrorHandler'
 import logRequests from './logRequests'
 import handleNotFound from './handleNotFound'
 import debug from 'debug'
-import servicebus from 'express-servicebus'
+import servicebus from '@servicebus/express-middleware'
 import promBundle from 'express-prom-bundle'
 
 const log = debug('express-api-common')
